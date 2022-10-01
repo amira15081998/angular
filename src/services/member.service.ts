@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+//import { resolve } from 'dns';
 import { GLOBAL } from 'src/app/app-config';
 import { Member } from 'src/models/member';
 
@@ -14,13 +15,28 @@ tab:Member[]=GLOBAL.db.members;
   {
 //return this.httpClient.post<Member>('localhost:4200',member).toPromise();
 const memberToSave={...member,
-  id:(Math.ceil(Math.random()*10000)).toString(),
-  createDate: new Date().toISOString(),
+  id:member.id ??(Math.ceil(Math.random()*10000)).toString(),
+  createDate: member.createDate ?? new Date().toDateString(),
 }
 this.tab=[memberToSave, ...this.tab.filter(item=>item.id!=memberToSave.id)];
 return new Promise(resolve=>resolve(memberToSave));
-
-
+  }
+  getMemberById(id:String):Promise<Member>
+  {
+    //return this.httpClient.get<Member>('link').toPromise();
+    return new Promise(resolve=>resolve(
+      this.tab.filter(item => item.id===id)[0]??null
+    ));
+    
+  }
+  deleteMember(id:string):Promise<void>{
+    //return this.httpClient.delete<void>('link').toPromise();
+this.tab=[...this.tab.filter(item=>item.id!=id)];
+return new Promise(resolve=>resolve());
+  }
+  getAllMmebers():Promise<Member[]>{
+//return this.httpClient.get<Member[]>("link").toPromise();
+return new Promise (resolve=>resolve(this.tab));
   }
 
 }

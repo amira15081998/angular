@@ -34,7 +34,7 @@ return new Promise(resolve=>resolve(memberToSave));
 this.tab=[...this.tab.filter(item=>item.id!=id)];
 return new Promise(resolve=>resolve());
   }
-  getAllMmebers():Promise<Member[]>{
+  getAllMembers():Promise<Member[]>{
 //return this.httpClient.get<Member[]>("link").toPromise();
 return new Promise (resolve=>resolve(this.tab));
   }

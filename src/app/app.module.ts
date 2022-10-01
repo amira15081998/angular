@@ -13,7 +13,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import {MatPaginatorModule} from '@angular/material/paginator';
+//import {MatPaginatorModule} from '@angular/material/paginator';
+//import { MatTableDataSource } from '@angular/material/table';
+//import {MatSort} from '@angular/material/sort';
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
@@ -34,7 +37,10 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatInputModule,
     FormsModule,
     HttpClientModule,
-    MatPaginatorModule,
+    //MatPaginatorModule,
+    //MatTableDataSource,
+    //MatSort,
+    MatCardModule,
     ReactiveFormsModule
   ],
   providers: [],

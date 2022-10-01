@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { Member } from 'src/models/member';
 import { MemberService } from 'src/services/member.service';
 
@@ -10,11 +11,11 @@ import { MemberService } from 'src/services/member.service';
   styleUrls: ['./members.component.css']
 })
 export class MembersComponent implements OnInit {
-dataSource:Member[];
+dataSource:MatTableDataSource<Member>;
 @ViewChild(MatPaginator) paginator!: MatPaginator;
 @ViewChild(MatSort) sort!: MatSort;
   constructor(private MS:MemberService) { 
-    this.dataSource=this.MS.tab;
+    this.dataSource = new MatTableDataSource(this.MS.tab);
   }
 
   ngOnInit(): void {
@@ -34,10 +35,14 @@ applyFilter(event: Event) {
   }
 }
 fetchDataSoure():void{
-  this.MS.getAllMmebers().then((tableau)=>{this.dataSource=tableau});
+  this.getMembers();
+}
+getMembers()
+{
+  this.MS.getAllMembers().then((tableau)=>this.dataSource.data=tableau);
 }
 OnRemove(id:string):void{
-  this.MS.deleteMember(id).then(()=>{this.fetchDataSoure()});
+  this.MS.deleteMember(id).then(() => this.dataSource = new MatTableDataSource(this.MS.tab));
 }
 }
 

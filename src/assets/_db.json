@@ -32,5 +32,43 @@
             "cv":"lien",
             "type":"STUDENT"
           }
-    ]
+    ],
+    "articles":[
+      {
+          "id":"0000",
+          "title":"Article1",
+          "type":"informatique",
+          "lien":"link",
+          "date":"06/10/2022",
+          "auteur":"",
+          "sourcePDF":"PDF"
+        },
+        {
+          "id":"0001",
+          "title":"Article2",
+          "type":"informatique",
+          "lien":"link",
+          "date":"06/10/2022",
+          "auteur":"",
+          "sourcePDF":"PDF"
+        },
+        {
+          "id":"0002",
+          "title":"Article3",
+          "type":"informatique",
+          "lien":"link",
+          "date":"06/10/2022",
+          "auteur":"",
+          "sourcePDF":"PDF"
+        },
+        {
+          "id":"0003",
+          "title":"Article4",
+          "type":"informatique",
+          "lien":"link",
+          "date":"06/10/2022",
+          "auteur":"",
+          "sourcePDF":"PDF"
+        }
+  ]
 }

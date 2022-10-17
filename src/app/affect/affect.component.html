@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Affect</title>
+</head>
+<body>
+  <mat-form-field appearance="fill">
+    <mat-label>Select an option</mat-label>
+    <mat-select [(value)]="selected" [formControl]="Control" required>
+      <mat-option>None</mat-option>
+      <mat-option *ngFor="let element of tab" [value]="element.name">{{element.name}}</mat-option>
+
+    </mat-select>
+    <mat-error *ngIf="Control.hasError('required')">Please choose an author</mat-error>
+  </mat-form-field>
+  <p>You selected: {{selected}}</p>
+  <button mat-fab color="primary" (click)="add(selected)">Add</button>
+</body>
+</html>

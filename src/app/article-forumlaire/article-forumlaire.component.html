@@ -4,36 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FORM</title>
+    <title>ARTICLE FORM</title>
 </head>
 <body>
   <br>
-  <b class="right">Member Form</b>
+  <b class="right">Article Form</b>
   <br>
   <br>
-    <form [formGroup]="form" (ngSubmit)="ONSUB()">
+    <form [formGroup]="form">
     <p>
         <mat-form-field appearance="legacy">
-          <input matInput placeholder="CIN" formControlName="cin">
+          <input matInput placeholder="title" formControlName="title">
         </mat-form-field>
       </p>
       <p>
         <mat-form-field appearance="legacy">
-          <input matInput placeholder="Name" formControlName="name">
+          <input matInput placeholder="type" formControlName="type">
         </mat-form-field>
       </p>
       <p>
         <mat-form-field appearance="legacy">
-          <input matInput placeholder="cv" formControlName="cv">
+          <input matInput placeholder="lien" formControlName="lien">
         </mat-form-field>
       </p>
       <p>
         <mat-form-field appearance="legacy">
-          <input matInput placeholder="Type" formControlName="type">
+          <input matInput placeholder="auteur" formControlName="auteur">
         </mat-form-field>
       </p>
       <p>
-        <button mat-raised-button color="primary">Submit</button>
+        <mat-form-field appearance="legacy">
+          <input matInput placeholder="sourcePDF" formControlName="sourcePDF">
+        </mat-form-field>
+      </p>
+      <p>
+        <button mat-raised-button color="primary" (click)="ONSUBMIT()">Submit</button>
       </p>
     </form> 
 </body>

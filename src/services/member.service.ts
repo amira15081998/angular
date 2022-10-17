@@ -11,6 +11,7 @@ export class MemberService {
 tab:Member[]=GLOBAL.db.members;
   constructor(private httpClient:HttpClient){
   }
+  
   saveMember(member:any):Promise<any>
   {
 //return this.httpClient.post<Member>('localhost:4200',member).toPromise();
@@ -21,6 +22,7 @@ const memberToSave={...member,
 this.tab=[memberToSave, ...this.tab.filter(item=>item.id!=memberToSave.id)];
 return new Promise(resolve=>resolve(memberToSave));
   }
+
   getMemberById(id:String):Promise<Member>
   {
     //return this.httpClient.get<Member>('link').toPromise();
@@ -29,11 +31,13 @@ return new Promise(resolve=>resolve(memberToSave));
     ));
     
   }
+
   deleteMember(id:string):Promise<void>{
     //return this.httpClient.delete<void>('link').toPromise();
 this.tab=[...this.tab.filter(item=>item.id!=id)];
 return new Promise(resolve=>resolve());
   }
+
   getAllMembers():Promise<Member[]>{
 //return this.httpClient.get<Member[]>("link").toPromise();
 return new Promise (resolve=>resolve(this.tab));

@@ -1,0 +1,17 @@
+.mat-table {
+    width: 100%;
+  }
+  .del-icon {
+    color: red;
+    display: inline-block;
+    margin-right: -20em;   
+}
+.edit-icon {
+  color: black;
+  display: inline-block;
+  margin-right: -20em;   
+}
+.right{
+    float: right;
+    margin-right: 1%;
+  }

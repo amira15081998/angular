@@ -26,11 +26,12 @@ import { ArticlesComponent } from './articles/articles.component';
 import { EventsComponent } from './events/events.component';
 import { AffectComponent } from './affect/affect.component';
 import {MatSelectModule} from '@angular/material/select';
-import { MatOptionModule } from '@angular/material/core';
+import { MatNativeDateModule, MatOptionModule } from '@angular/material/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FirebaseModule } from './Firebase.module';
 import { LoginComponent } from './login/login.component';
 import { ArticleForumlaireComponent } from './article-forumlaire/article-forumlaire.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 @NgModule({
@@ -69,7 +70,9 @@ import { ArticleForumlaireComponent } from './article-forumlaire/article-forumla
     MatSelectModule,
     MatOptionModule,
     FlexLayoutModule,
-    FirebaseModule
+    FirebaseModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

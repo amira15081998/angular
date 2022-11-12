@@ -25,7 +25,7 @@ export class AffectComponent implements OnInit {
   }
   add(val:string):void{
     //1.recuperer id à partir de url
-this.currentID=this.activatedRoute.snapshot.params.id;
+    this.currentID=this.activatedRoute.snapshot.params.id;
     //2.si id exist alors, appeler la fonction affect du service
     if (!!this.currentID) 
     this.AS.Affect(val,this.currentID).then(()=>{this.router.navigate(['\articles'])});

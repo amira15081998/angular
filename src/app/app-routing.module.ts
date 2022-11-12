@@ -43,7 +43,7 @@ const routes: Routes = [
     component:ArticleForumlaireComponent
   },
   {
-    path:'articles/:id/edite',
+    path:':id/edite',
     pathMatch:'full',
     component:ArticleForumlaireComponent
 

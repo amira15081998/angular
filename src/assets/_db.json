@@ -70,5 +70,31 @@
           "auteur":"",
           "sourcePDF":"PDF"
         }
-  ]
+  ],
+  "outils":[
+    {
+      "name":"Tool1",
+      "id":"0000",
+      "date":"09/11/2022",
+      "source":""
+      },
+      {
+        "name":"Tool2",
+        "id":"0001",
+        "date":"09/11/2022",
+        "source":""
+      },
+      {
+        "name":"Tool3",
+        "id":"0002",
+        "date":"09/11/2022",
+        "source":""
+      },
+      {
+        "name":"Tool4",
+        "id":"0003",
+        "date":"09/11/2022",
+        "source":""
+      }
+]
 }
